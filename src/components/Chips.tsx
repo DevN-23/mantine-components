@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Chip, Space, Text, Title } from "@mantine/core";
-import { IconX } from '@tabler/icons-react';
+import { Chip, Group, Space, Text, Title } from "@mantine/core";
+import { IconX } from "@tabler/icons-react";
 
 export default function Chips() {
   const [checked, setChecked] = useState(false);
@@ -25,6 +25,31 @@ export default function Chips() {
       >
         Forbidden
       </Chip>
+      <Space h="md" />
+      <ChipGroups />
+    </>
+  );
+}
+
+function ChipGroups() {
+  return (
+    <>
+      <Text>Chip.Group</Text>
+      <Chip.Group>
+        <Group mt="md">
+          <Chip value="1">Single chip</Chip>
+          <Chip value="2">Can be selected</Chip>
+          <Chip value="3">At a time</Chip>
+        </Group>
+      </Chip.Group>
+
+      <Chip.Group multiple>
+        <Group mt="md">
+          <Chip value="1">Multiple chips</Chip>
+          <Chip value="2">Can be selected</Chip>
+          <Chip value="3">At a time</Chip>
+        </Group>
+      </Chip.Group>
     </>
   );
 }
